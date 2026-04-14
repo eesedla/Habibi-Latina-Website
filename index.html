@@ -56,7 +56,7 @@
 
 <style>
   .hl-marquee-wrap {
-    background: #1a0a00;
+    background: #fafafa;
     border-top: 6px solid #0ca248;
     border-bottom: 6px solid #0ca248;
     overflow: hidden;
@@ -73,19 +73,18 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #ffe066;
-    box-shadow: 0 0 4px #ffe066;
     flex-shrink: 0;
+    transition: opacity 0.3s;
   }
- 
+
   .hl-bulb.dim {
-    background: #5a4200;
-    box-shadow: none;
+    opacity: 0.15;
+    box-shadow: none !important;
   }
  
   .hl-marquee-inner {
     background: #f5f0dc;
-    padding: 20px 0;
+    padding: 20px 0 0;
     overflow: hidden;
   }
  
@@ -185,14 +184,14 @@
  
       <div class="hl-review-card">
         <span class="hl-stars">★★★★★</span>
-        <span class="hl-review-text">I had such an amazing experience at this restaurant! The food was absolutely spectacular, and their lentil soup is honestly one of the best I’ve ever had in my life. The staff was incredibly friendly, and the owner was so kind. Truly exceptional service. Wishing this business lots of success! If you’re in the area, you have to try this place! 😍😍😍</span>
+        <span class="hl-review-text">I had such an amazing experience at this restaurant! The food was absolutely spectacular, and their lentil soup is honestly one of the best I’ve ever had in my life. The staff was incredibly friendly, and the owner was so kind. Truly exceptional service. If you’re in the area, you have to try this place! 😍😍😍</span>
         <span class="hl-reviewer-name">— Andrea Z.</span>
       </div>
       <span class="hl-sep"><img src="palmtree.png" alt="palm tree" /></span>
  
       <div class="hl-review-card">
         <span class="hl-stars">★★★★★</span>
-        <span class="hl-review-text">My family had dinner here here last night and it was a first visit of many more to come. All the menu items we ordered were so flavorful and fresh, prepared to order. We ordered the gyro, fattoush, empanadas, rice and falafel. The portions were so generous with extra to take home. The hospitality and service was absolutely unmatched! These guys are pros. Highly recommend!</span>
+        <span class="hl-review-text">All the menu items we ordered were so flavorful and fresh. We ordered the gyro, fattoush, empanadas, rice and falafel. The portions were so generous with extra to take home. The hospitality and service was absolutely unmatched! These guys are pros. Highly recommend!</span>
         <span class="hl-reviewer-name">— Jill D.</span>
       </div>
       <span class="hl-sep"><img src="tree_of_lebanon.png" alt="cedar tree" /></span>
@@ -206,7 +205,7 @@
  
       <div class="hl-review-card">
         <span class="hl-stars">★★★★★</span>
-        <span class="hl-review-text">I was so hungry and looking for a good Halal restaurant in the area and I stumbled upon this Gem MashAllah! They have so many food options and I’m sure everything is great! I had their pollo empanadillas, when I tell you they were so delicious. Me and my sisters were in awe. Thank you so much for the delicious food and great hospitality! Shukran and Gracias☺️</span>
+        <span class="hl-review-text">I was so hungry and looking for a good Halal restaurant in the area and I stumbled upon this Gem MashAllah! They have so many food options! I had their pollo empanadillas, when I tell you they were so delicious. Me and my sisters were in awe. Thank you so much for the delicious food and great hospitality! Shukran and Gracias☺️</span>
         <span class="hl-reviewer-name">— Farhaanah W.</span>
       </div>
       <span class="hl-sep"><img src="tree_of_lebanon.png" alt="cedar tree" /></span>
@@ -219,18 +218,23 @@
  
   <!-- Bottom bulb row -->
   <div class="hl-bulb-row" id="hl-bulbs-bottom"></div>
- 
-</div>
+
+  </div><!-- / hl-marquee-inner -->
+</div><!-- / hl-marquee-wrap -->
  
 <script>
   (function () {
+    var COLORS = ['#ff4444','#ff8c00','#ffe066','#44cc44','#44aaff','#aa44ff','#ff44aa'];
     function makeBulbs(id) {
       var row = document.getElementById(id);
       if (!row) return;
       var count = Math.floor(row.offsetWidth / 20) || 40;
       for (var i = 0; i < count; i++) {
         var b = document.createElement('div');
+        var color = COLORS[i % COLORS.length];
         b.className = 'hl-bulb';
+        b.style.background = color;
+        b.style.boxShadow = '0 0 6px ' + color;
         row.appendChild(b);
       }
       setInterval(function () {
