@@ -54,6 +54,260 @@
         </div>
         </header>
 
+<style>
+  .hl-marquee-wrap {
+    background: #1a0a00;
+    border-top: 6px solid #0ca248;
+    border-bottom: 6px solid #0ca248;
+    overflow: hidden;
+  }
+ 
+  .hl-bulb-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 4px;
+    background: #054427;
+  }
+ 
+  .hl-bulb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffe066;
+    box-shadow: 0 0 4px #ffe066;
+    flex-shrink: 0;
+  }
+ 
+  .hl-bulb.dim {
+    background: #5a4200;
+    box-shadow: none;
+  }
+ 
+  .hl-marquee-inner {
+    background: #f5f0dc;
+    padding: 20px 0;
+    overflow: hidden;
+  }
+ 
+  .hl-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: hl-scroll-left 65s linear infinite;
+    align-items: flex-start;
+  }
+ 
+  .hl-marquee-track:hover {
+    animation-play-state: paused;
+  }
+ 
+  @keyframes hl-scroll-left {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+ 
+  .hl-review-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 0 32px;
+    max-width: 340px;
+    white-space: normal;
+    font-family: '"profile-pro", sans-serif;', monospace;
+  }
+ 
+  .hl-stars {
+    font-size: 25px;
+    color: #c8860a;
+    letter-spacing:4px;
+  }
+ 
+  .hl-review-text {
+    font-size: 17px;
+    color: #1a0a00;
+    font-family: '"profile-pro", sans-serif;', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+ 
+  .hl-reviewer-name {
+    font-size: 13px;
+    color: #7a4a10;
+    font-family: '"profile-pro", sans-serif;', monospace;
+    text-transform: uppercase;
+  }
+ 
+  .hl-sep {
+    color: #c8860a;
+    font-size: 22px;
+    padding: 0 8px;
+    align-self: center;
+    font-family: '"profile-pro", serif';
+  }
+</style>
+ 
+<div class="hl-marquee-wrap">
+ 
+  <!-- Top bulb row -->
+  <div class="hl-bulb-row" id="hl-bulbs-top"></div>
+ 
+  <!-- Scrolling reviews -->
+  <div class="hl-marquee-inner">
+    <div class="hl-marquee-track">
+ 
+      <!-- ✏️ EDIT YOUR REVIEWS BELOW -->
+      <!-- Each review card follows the same pattern:
+           stars · review text · reviewer name
+           Duplicate or remove cards as needed.
+           The track is duplicated once below to create
+           a seamless infinite loop — keep both halves in sync. -->
+ 
+      <!-- === FIRST HALF === -->
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Great restaurant that combines two of my favorite cultural cuisines. I got the beef gyro with rice and the mofongo with shrimp. Both were amazing and the batido dominicano as well. Very good deal for 2 meals under $40</span>
+        <span class="hl-reviewer-name">— Maria G.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">The pernil &amp; hummus combo is everything.</span>
+        <span class="hl-reviewer-name">— DeShawn T.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Obsessed. Never leaving W 25th.</span>
+        <span class="hl-reviewer-name">— Sofia R.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Two cultures, one perfect bite!</span>
+        <span class="hl-reviewer-name">— James K.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">I dream about the falafel. Not joking.</span>
+        <span class="hl-reviewer-name">— Priya M.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Friendliest spot on the west side.</span>
+        <span class="hl-reviewer-name">— Carlos V.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Fresh, fast &amp; unlike anything else in CLE!</span>
+        <span class="hl-reviewer-name">— Aisha B.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">My whole family is hooked. Weekly regulars.</span>
+        <span class="hl-reviewer-name">— Tom H.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <!-- === SECOND HALF (exact copy — do not edit independently) === -->
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Best shawarma in Cleveland, hands down!</span>
+        <span class="hl-reviewer-name">— Maria G.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">The pernil &amp; hummus combo is everything.</span>
+        <span class="hl-reviewer-name">— DeShawn T.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Obsessed. Never leaving W 25th.</span>
+        <span class="hl-reviewer-name">— Sofia R.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Two cultures, one perfect bite!</span>
+        <span class="hl-reviewer-name">— James K.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">I dream about the falafel. Not joking.</span>
+        <span class="hl-reviewer-name">— Priya M.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Friendliest spot on the west side.</span>
+        <span class="hl-reviewer-name">— Carlos V.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">Fresh, fast &amp; unlike anything else in CLE!</span>
+        <span class="hl-reviewer-name">— Aisha B.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+      <div class="hl-review-card">
+        <span class="hl-stars">★★★★★</span>
+        <span class="hl-review-text">My whole family is hooked. Weekly regulars.</span>
+        <span class="hl-reviewer-name">— Tom H.</span>
+      </div>
+      <span class="hl-sep">✦</span>
+ 
+    </div>
+  </div>
+ 
+  <!-- Bottom bulb row -->
+  <div class="hl-bulb-row" id="hl-bulbs-bottom"></div>
+ 
+</div>
+ 
+<script>
+  (function () {
+    function makeBulbs(id) {
+      var row = document.getElementById(id);
+      if (!row) return;
+      var count = Math.floor(row.offsetWidth / 20) || 40;
+      for (var i = 0; i < count; i++) {
+        var b = document.createElement('div');
+        b.className = 'hl-bulb';
+        row.appendChild(b);
+      }
+      setInterval(function () {
+        var bulbs = row.querySelectorAll('.hl-bulb');
+        bulbs.forEach(function (b) {
+          b.className = 'hl-bulb' + (Math.random() > 0.85 ? ' dim' : '');
+        });
+      }, 600);
+    }
+    makeBulbs('hl-bulbs-top');
+    makeBulbs('hl-bulbs-bottom');
+  })();
+</script>
+<!-- === END HABIBI LATINA MARQUEE === -->
+
       <div id="home-content">
           <p class="hours-main">Mon–Thur 10am–7pm &nbsp;|&nbsp; Fri-Sun 10am–8pm </p>
           <p class="phone">(216) 612-4116</p>
